@@ -1,0 +1,69 @@
+Документација за Лабараториска вежба 1
+
+1.Инсталирање и креирање на Git прифил.
+2.Креирање на оддалечен (remote) репозиториум - SI_2023_lab1_213070.
+3.Со mkdir креираме фолдер;
+ -со командата cd влегуваме во постоечки фолдер.
+4.На Desktop креирам фолдер со име SI_2023_lab1_213070;
+ -со командата cd  влегуваме во фолдерот;
+ -со командата git init иницијализираме Git во директориумот;
+ -$ git init
+Initialized empty Git repository in C:/Users/Ana Terzieva/Desktop/SI_2023_lab1_213070/.git/
+5.Го поврзуваме локалниот репозиториум со оддалечениот репозиториум со командата
+ -$ git remote add origin https://github.com/anaterzieva7/SI_2023_lab1_213070.git
+6.Со командата nano го отвараме фајлот за да може да запишуваме во него,
+ -со командата git add го додаваме фајлот во staged состојба,
+ -потоа со командата git commit -m "Initial commit"
+$ git commit -m "Initial commit"
+[master (root-commit) 3926f4f] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+7.Со командата nano SILab1.java отвараме file и во него го внесуваме дадениот код.
+ -со командата git add го додаваме фајлот во staged состојба,
+ -потоа со командата git commit -m "Add java class"
+$ git commit -m "Add java class"
+[master 8539961] Add java class
+ 1 file changed, 41 insertions(+)
+ create mode 100644 SILab1.java
+8.Со командата git push origin master ги поставуваме на главното repo.
+9.Со командата git branch branch_name - се креира нова гранка на која ќе се работи
+10.Со командата git checkout bug1 се префрламе на гранката
+$ git checkout bug1
+Switched to branch 'bug1'
+11.Грешката во for циклусот е дека треба да се читаат и итериират броеви само полами од n.
+ -следно правиме commit со порака Fix wrong loop for reading
+ -го ставаме fileot на сцена во состојба staged
+ -следно е
+$ git commit -m "Fix wrong loop for reading"
+[bug1 492eb28] Fix wrong loop for reading
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+12.Со командата git checkout bug2 се префламе на втората гранка
+13.Грешката во filterOddNumbers е дека треба да се филтрираат само непрани броеви и треба да се смени 
+од ==0 во !=0
+ -следно правиме commit со порака Fix wrong condition in filterOddNumbers
+ -го ставаме fileot на сцена во состојба staged
+ -следно е
+$ git commit -m "Fix wrong condition in filterOddNumbers"
+[bug1 6810d23] Fix wrong condition in filterOddNumbers
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+14.Се префрламе на гранката со командата git checkout bug3
+15.Ја поправаме грешката во кодот во методот sumEvenNumbers и правиме commit со порака
+-"Fix method sumEvenNumbers".Грешката во кодот е тоа што сумата треба да биде еднаква на 0 
+и имаме промена наместо sum*=el, менуваме во sum+=el.
+ -git add SILab1.java
+ -git commit -m "Fix method sumEvenNumbers"
+16.Ги синхорнизираме гранките со remote repo со командата
+ -се префрлуваме на главната гранка master git chechkout master
+ -git push--all
+
+18.Спојување на master so bug1 со командата git merge bug1, нема конфликт поради тоа што на
+мастер гранката не постои претходен commit. Fast Forward спојување
+19.Синхронизирање: git push -u origin master
+20.Спојување на гранката bug2 кон master
+- Auto-merging SILab1.java
+21.Синхронизирање: git push -u origin master
+22.Префрлање на гранка bug3 (git checkout bug3)
+23.git rebase master
+24.git checkout master
+25.git rebase bug3, пораката што се добива е:Successfully rebased and updated refs/heads/master.
+26.За синхронизирање користам: git push --all --force.
